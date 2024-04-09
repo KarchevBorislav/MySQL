@@ -1,0 +1,16 @@
+CREATE TABLE `users`(
+`id`INT PRIMARY KEY AUTO_INCREMENT,
+`username` VARCHAR(30) NOT NULL ,
+`password`VARCHAR(26) NOT NULL,
+`profil_picture` BLOB,
+`last_login_time`  TIME,
+`is_deleted`BOOLEAN
+);
+
+INSERT INTO `users`(`username`,`password`)
+VALUES
+("dasAuge",1234),
+("Local",1122),
+("Data",2255),
+("Nope",5898),
+("Yuus",5654);
