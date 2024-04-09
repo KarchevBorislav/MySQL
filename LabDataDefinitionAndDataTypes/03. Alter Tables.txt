@@ -1,0 +1,4 @@
+
+INSERT INTO `employees`(`first_name`,`last_name`) VALUE ("Ivan","Ivanov");
+ALTER TABLE `employees`
+ADD COLUMN `middle_name` VARCHAR(100);
