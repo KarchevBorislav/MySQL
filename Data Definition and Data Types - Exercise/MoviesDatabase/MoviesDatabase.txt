@@ -1,0 +1,67 @@
+CREATE TABLE `directors`(
+`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+`director_name` VARCHAR(100) NOT NULL,
+`notes` TEXT)
+
+;
+INSERT INTO `directors`(`id`,`director_name`)
+VALUES
+(1,'Martin Scorcese'),
+(2,'Andrey Slabakov'),
+(3,'Mell Gibson'),
+(4,'Ridley Scott'),
+(5,'Christopfer Nolan')
+;
+
+
+CREATE TABLE `genres`(
+`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+`genre_name` VARCHAR(100) NOT NULL,
+`notes` TEXT)
+
+;
+INSERT INTO `genres`(`id`,`genre_name`)
+VALUES
+(1,'Comedy'),
+(2,'Thriller'),
+(3,'Action'),
+(4,'Drama'),
+(5,'Biography');
+
+
+CREATE TABLE `categories`(
+`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+`category_name` VARCHAR(100) NOT NULL,
+`notes` TEXT)
+
+;
+
+INSERT INTO `categories`(`id`,`category_name`)
+VALUES 
+(1,'Comedy'),
+(2,'Thriller'),
+(3,'Action'),
+(4,'Drama'),
+(5,'Biography');
+
+CREATE TABLE `movies`(
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`title` VARCHAR(100) NOT NULL,
+`director_id` INT ,
+`copyright_year` DATE,
+`length` INT,
+`genre_id` INT ,
+`category_id` INT,
+`ratings` FLOAT(2,1),
+`notes` TEXT
+);
+
+
+INSERT INTO `movies`(`id`,`title`,`director_id`,`ratings`)
+VALUES
+(1,'Hangover',2,7.5),
+(2,'Gone gorl',1,8.5),
+(3,'Terminator 2',3,9.8),
+(4,'Drama',4,5.5),
+(5,'Biography',5,5.5)
+;
