@@ -1,0 +1,26 @@
+
+CREATE TABLE `towns`(
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(25) NOT NULL
+);
+CREATE TABLE `addresses`(
+`id`INT PRIMARY KEY AUTO_INCREMENT,
+`address_text` VARCHAR(255) NOT NULL ,
+`town_id` INT
+);
+CREATE TABLE `departments`(
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(255) NOT NULL
+); 
+
+CREATE TABLE `employees` (
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`first_name` VARCHAR (25) NOT NULL,
+`middle_name` VARCHAR(25) NOT NULL,
+`last_name` VARCHAR(25) NOT NULL,
+`job_title` VARCHAR(55) NOT NULL,
+`department_id` INT ,
+`hire_date` DATE,
+`salary` DOUBLE,
+`address_id` INT
+);
