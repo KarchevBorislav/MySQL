@@ -1,0 +1,8 @@
+   CREATE FUNCTION ufn_calculate_future_value (sum DECIMAL(19, 4), yearly_interest DOUBLE, years INT)
+   RETURNS DECIMAL (19,4)
+   DETERMINISTIC
+   BEGIN
+   DECLARE end_sum DECIMAL (19,4);
+   SET end_sum :=sum *POW(1 + yearly_interest, years);
+   RETURN end_sum;
+   END 

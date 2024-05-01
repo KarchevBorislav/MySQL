@@ -1,0 +1,11 @@
+CREATE PROCEDURE  usp_get_holders_with_balance_higher_than (money DECIMAL(12,4))
+BEGIN
+	SELECT `first_name` ,`last_name`
+	FROM `account_holders` AS ac
+	JOIN `accounts` AS a
+    ON ac.`id` = a.`account_holder_id`
+   GROUP BY `first_name`,`last_name`
+ 
+   HAVING SUM(a.`balance`) > `money`;
+    
+   END
