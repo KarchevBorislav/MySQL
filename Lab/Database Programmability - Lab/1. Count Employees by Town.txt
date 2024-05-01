@@ -1,0 +1,15 @@
+CREATE FUNCTION  ufn_count_employees_by_town(town_name VARCHAR (50)) 
+RETURNS INT
+DETERMINISTIC
+BEGIN 
+DECLARE town_ids INT ;
+DECLARE count_of_employees INT;
+SET `town_ids` := (SELECT `town_id` FROM `towns` WHERE `name` = town_name);
+SET `count_of_employees` := (
+SELECT COUNT(*)  FROM `employees` AS `e`
+ WHERE e.`address_id` IN (
+ SELECT `address_id` FROM `addresses` WHERE `town_id` = town_ids
+ ) 
+ );
+RETURN `count_of_employees`;
+END 
